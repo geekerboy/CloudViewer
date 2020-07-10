@@ -85,3 +85,12 @@ make
 运行结果：
 
 <img src="http://nightn.com/cloudviewer/img2/linux-cloudviewer.png" width="600" />
+
+### make遇到的bug
+* ``/usr/lib/x86_64-linux-gnu/libSM.so: undefined reference to `uuid_generate@UUID_1.0``<br>
+**ans:**把anacondax(取决于你的版本)/lib下的libuuid[库文件移走](https://blog.csdn.net/u014734886/article/details/93029349)
+* ``anaconda3/lib/libfontconfig.so.1: undefined reference to `FT_Done_MM_Var''<br>
+**ans:**[复制一个库文件](https://stackoverflow.com/questions/53910698/undefined-reference-to-ft-done-mm-var/56581845#56581845)，提到建立软连接，我尝试两行代码都提示文件已存在，但解决了这个bug
+* 以上两个bug解决了,make通过,程序运行起来了
+
+
